@@ -5,7 +5,6 @@ export default function DisplayItems({ list, type, handleSaveEducation }) {
     <Item
       key={item.id}
       item={item}
-      text={item.name}
       type={type}
       handleSaveEducation={handleSaveEducation}
     />

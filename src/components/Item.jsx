@@ -2,7 +2,7 @@ import { useState } from "react";
 import EducationForm from "./Education/EducationForm";
 import WorkForm from "./Work/WorkForm";
 
-export default function Item({ item, text, type, handleSaveEducation }) {
+export default function Item({ item, type, handleSaveEducation }) {
   const [hide, setHide] = useState(true);
 
   const handleToggle = () => {
@@ -13,7 +13,7 @@ export default function Item({ item, text, type, handleSaveEducation }) {
     <>
       <div className='item-container'>
         <button className='expand-item' onClick={handleToggle}>
-          <h3>{text}</h3>
+          <h3>{item.schoolName}</h3>
           <span className='material-symbols-outlined'>keyboard_arrow_down</span>
         </button>
         <div className={hide ? "item-body hide" : "item-body"}>

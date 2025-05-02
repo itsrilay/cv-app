@@ -1,5 +1,4 @@
 // import { useState } from "react";
-import FormSection from "./FormSection";
 import EducationSection from "./Education/EducationSection";
 
 export default function FormContainer({
