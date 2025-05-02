@@ -55,10 +55,12 @@ export default function EducationForm({
         onChange={handleChange}
       />
 
-      <button className='save'>Save</button>
-      <button className='delete' onClick={handleDelete}>
-        Delete
-      </button>
+      <div className='buttons'>
+        <button className='save'>Save</button>
+        <button className='delete' onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
     </form>
   );
 }

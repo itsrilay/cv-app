@@ -1,13 +1,38 @@
-export default function WorkForm({ data, onChange }) {
+import { useState } from "react";
+
+export default function WorkForm({ item, handleSaveWork, handleDeleteWork }) {
+  const [formData, setFormData] = useState({
+    company: item.company,
+    position: item.position,
+    responsibilities: item.responsibilities,
+    dateFrom: item.dateFrom,
+    dateTo: item.dateTo,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSaveWork(item.id, formData);
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    handleDeleteWork(item.id);
+  };
+
   return (
-    <form className='work' onSubmit={(e) => e.preventDefault()}>
+    <form className='work' onSubmit={handleSubmit}>
       <label htmlFor='company'>Company Name</label>
       <input
         id='company'
         name='company'
         type='text'
-        onChange={onChange}
-        value={data.company}
+        value={formData.company}
+        onChange={handleChange}
       />
 
       <label htmlFor='position'>Position Title</label>
@@ -15,8 +40,8 @@ export default function WorkForm({ data, onChange }) {
         id='position'
         name='position'
         type='text'
-        onChange={onChange}
-        value={data.position}
+        value={formData.position}
+        onChange={handleChange}
       />
 
       <label htmlFor='responsibilities'>Main Responsibilities</label>
@@ -24,8 +49,8 @@ export default function WorkForm({ data, onChange }) {
         id='responsibilities'
         name='responsibilities'
         type='text'
-        onChange={onChange}
-        value={data.responsibilities}
+        value={formData.responsibilities}
+        onChange={handleChange}
       />
 
       <label htmlFor='dateFrom'>Date From</label>
@@ -33,8 +58,8 @@ export default function WorkForm({ data, onChange }) {
         id='dateFrom'
         name='dateFrom'
         type='text'
-        onChange={onChange}
-        value={data.dateFrom}
+        value={formData.dateFrom}
+        onChange={handleChange}
       />
 
       <label htmlFor='dateTo'>Date To</label>
@@ -42,11 +67,16 @@ export default function WorkForm({ data, onChange }) {
         id='dateTo'
         name='dateTo'
         type='text'
-        onChange={onChange}
-        value={data.dateTo}
+        value={formData.dateTo}
+        onChange={handleChange}
       />
 
-      <button className='save'>Save</button>
+      <div className='buttons'>
+        <button className='save'>Save</button>
+        <button className='delete' onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
     </form>
   );
 }

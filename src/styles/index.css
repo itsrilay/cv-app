@@ -90,7 +90,8 @@ main {
 
 .form-section-body,
 .item-body {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 1em 1em 1em 1em;
   opacity: 1;
   height: fit-content;
@@ -175,8 +176,14 @@ input {
   max-width: 50%;
 }
 
+.buttons {
+  display: flex;
+  gap: 1em;
+}
+
 .save,
-.new {
+.new,
+.delete {
   cursor: pointer;
   max-width: 60px;
   height: auto;
@@ -192,11 +199,12 @@ input {
 }
 
 .new {
+  align-self: center;
   border-color: #575757;
   background-color: #575757;
 }
 
-.edit {
-  background-color: #137000;
-  border-color: #61ef45;
+.delete {
+  border-color: #b13527;
+  background-color: #b13527;
 }

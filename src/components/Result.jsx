@@ -1,6 +1,7 @@
 import DisplayEducations from "./Education/displayEducations";
+import DisplayWorks from "./Work/DisplayWorks";
 
-function Result({ educations }) {
+function Result({ educations, works }) {
   return (
     <section className='cv-result'>
       {/* <div className='cv-header'>
@@ -15,17 +16,10 @@ function Result({ educations }) {
           <h1 className='cv-section-header'>Education</h1>
           <DisplayEducations educations={educations} />
         </div>
-        {/* <div className='cv-work'>
+        <div className='cv-work'>
           <h1 className='cv-section-header'>Work Experience</h1>
-          <div className='work-info'>
-            <h3>{data.company}</h3>
-            <p>{data.position}</p>
-            <p>
-              {data.dateFrom} - {data.dateTo}
-            </p>
-          </div>
-          <p>{data.responsibilities}</p>
-        </div> */}
+          <DisplayWorks works={works} />
+        </div>
       </div>
     </section>
   );

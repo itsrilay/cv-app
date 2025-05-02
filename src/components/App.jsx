@@ -6,7 +6,9 @@ let id = 0;
 
 export default function App() {
   const [educationList, setEducationList] = useState([]);
+  const [workList, setWorkList] = useState([]);
 
+  // Education
   const handleSaveEducation = (id, updatedData) => {
     setEducationList(
       educationList.map((education) =>
@@ -16,7 +18,6 @@ export default function App() {
   };
 
   const handleNewEducation = () => {
-    console.log(educationList);
     setEducationList([
       ...educationList,
       { id: id++, schoolName: "New Item", studyTitle: "", studyDate: "" },
@@ -27,6 +28,33 @@ export default function App() {
     setEducationList(educationList.filter((education) => education.id !== id));
   };
 
+  // Work
+  const handleSaveWork = (id, updatedData) => {
+    setWorkList(
+      workList.map((work) =>
+        work.id === id ? { ...work, ...updatedData } : work
+      )
+    );
+  };
+
+  const handleNewWork = () => {
+    setWorkList([
+      ...workList,
+      {
+        id: id++,
+        company: "New Item",
+        position: "",
+        responsibilities: "",
+        dateFrom: "",
+        dateTo: "",
+      },
+    ]);
+  };
+
+  const handleDeleteWork = (id) => {
+    setWorkList(workList.filter((work) => work.id !== id));
+  };
+
   return (
     <>
       <FormContainer
@@ -34,8 +62,12 @@ export default function App() {
         handleNewEducation={handleNewEducation}
         handleSaveEducation={handleSaveEducation}
         handleDeleteEducation={handleDeleteEducation}
+        workList={workList}
+        handleNewWork={handleNewWork}
+        handleSaveWork={handleSaveWork}
+        handleDeleteWork={handleDeleteWork}
       />
-      <Result educations={educationList} />
+      <Result educations={educationList} works={workList} />
     </>
   );
 }

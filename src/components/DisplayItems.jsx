@@ -1,18 +1,13 @@
 import Item from "./Item";
 
-export default function DisplayItems({
-  list,
-  type,
-  handleSaveEducation,
-  handleDeleteEducation,
-}) {
+export default function DisplayItems({ list, type, handleSave, handleDelete }) {
   const listItems = list.map((item) => (
     <Item
       key={item.id}
-      item={item}
       type={type}
-      handleSaveEducation={handleSaveEducation}
-      handleDeleteEducation={handleDeleteEducation}
+      item={item}
+      handleSave={handleSave}
+      handleDelete={handleDelete}
     />
   ));
 
