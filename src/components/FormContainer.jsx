@@ -1,7 +1,10 @@
+import PersonalSection from "./Personal/PersonalSection";
 import EducationSection from "./Education/EducationSection";
 import WorkSection from "./Work/WorkSection";
 
 export default function FormContainer({
+  personalInfo,
+  handleSavePersonal,
   educationList,
   handleNewEducation,
   handleSaveEducation,
@@ -13,6 +16,10 @@ export default function FormContainer({
 }) {
   return (
     <section className='form-container'>
+      <PersonalSection
+        personalInfo={personalInfo}
+        handleSavePersonal={handleSavePersonal}
+      />
       <EducationSection
         handleNewEducation={handleNewEducation}
         educationList={educationList}

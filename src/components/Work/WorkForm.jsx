@@ -45,7 +45,9 @@ export default function WorkForm({ item, handleSaveWork, handleDeleteWork }) {
       />
 
       <label htmlFor='responsibilities'>Main Responsibilities</label>
-      <input
+      <textarea
+        cols={4}
+        rows={10}
         id='responsibilities'
         name='responsibilities'
         type='text'

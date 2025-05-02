@@ -5,8 +5,19 @@ import { useState } from "react";
 let id = 0;
 
 export default function App() {
+  const [personalInfo, setPersonalInfo] = useState({
+    name: "Walter White",
+    email: "heisenberg.chemist@manufacturing.com",
+    phone: "007091958",
+    address: "New Mexico, US",
+  });
   const [educationList, setEducationList] = useState([]);
   const [workList, setWorkList] = useState([]);
+
+  // Personal
+  const handleSavePersonal = (updatedData) => {
+    setPersonalInfo(updatedData);
+  };
 
   // Education
   const handleSaveEducation = (id, updatedData) => {
@@ -58,6 +69,8 @@ export default function App() {
   return (
     <>
       <FormContainer
+        personalInfo={personalInfo}
+        handleSavePersonal={handleSavePersonal}
         educationList={educationList}
         handleNewEducation={handleNewEducation}
         handleSaveEducation={handleSaveEducation}
@@ -67,7 +80,11 @@ export default function App() {
         handleSaveWork={handleSaveWork}
         handleDeleteWork={handleDeleteWork}
       />
-      <Result educations={educationList} works={workList} />
+      <Result
+        personal={personalInfo}
+        educations={educationList}
+        works={workList}
+      />
     </>
   );
 }

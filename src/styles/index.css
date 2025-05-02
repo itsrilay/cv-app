@@ -170,7 +170,8 @@ label {
   font-weight: bold;
 }
 
-input {
+input,
+textarea {
   margin-bottom: 1em;
   padding: 5px;
   max-width: 50%;
