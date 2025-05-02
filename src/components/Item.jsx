@@ -2,7 +2,12 @@ import { useState } from "react";
 import EducationForm from "./Education/EducationForm";
 import WorkForm from "./Work/WorkForm";
 
-export default function Item({ item, type, handleSaveEducation }) {
+export default function Item({
+  item,
+  type,
+  handleSaveEducation,
+  handleDeleteEducation,
+}) {
   const [hide, setHide] = useState(true);
 
   const handleToggle = () => {
@@ -21,6 +26,7 @@ export default function Item({ item, type, handleSaveEducation }) {
             <EducationForm
               item={item}
               handleSaveEducation={handleSaveEducation}
+              handleDeleteEducation={handleDeleteEducation}
             />
           ) : type === "Work" ? (
             <WorkForm />

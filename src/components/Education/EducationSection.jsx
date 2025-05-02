@@ -3,8 +3,9 @@ import DisplayItems from "../DisplayItems";
 
 export default function EducationSection({
   educationList,
-  handleNew,
+  handleNewEducation,
   handleSaveEducation,
+  handleDeleteEducation,
 }) {
   const [hide, setHide] = useState(true);
 
@@ -24,8 +25,9 @@ export default function EducationSection({
             type='Education'
             list={educationList}
             handleSaveEducation={handleSaveEducation}
+            handleDeleteEducation={handleDeleteEducation}
           />
-          <button className='new' onClick={handleNew}>
+          <button className='new' onClick={handleNewEducation}>
             New
           </button>
         </>

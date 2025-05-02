@@ -5,45 +5,7 @@ import { useState } from "react";
 let id = 0;
 
 export default function App() {
-  // const [formData, setFormData] = useState({
-  //   name: "Walter White",
-  //   email: "walter.white@gmail.com",
-  //   phone: "123456789",
-  //   schoolName: "Chemistry School",
-  //   studyTitle: "Chemistry",
-  //   studyDate: "04/2000",
-  //   company: "Chemistry Company",
-  //   position: "Manufacturer",
-  //   responsibilities: "Making the good stuff.",
-  //   dateFrom: "06/2010",
-  //   dateTo: "Present",
-  // });
-
-  // const [isFormSent, setIsFormSent] = useState(false);
-
-  // const [isFormEdit, setIsFormEdit] = useState(false);
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   setIsFormSent(true);
-  //   setIsFormEdit(false);
-  // }
-
-  // function handleEdit() {
-  //   setIsFormEdit(true);
-  // }
-
-  // function handleInputChange(e) {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // }
-
   const [educationList, setEducationList] = useState([]);
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setEducationFields([...educationFields, { [name]: value }]);
-  // };
 
   const handleSaveEducation = (id, updatedData) => {
     setEducationList(
@@ -53,7 +15,7 @@ export default function App() {
     );
   };
 
-  const handleNew = () => {
+  const handleNewEducation = () => {
     console.log(educationList);
     setEducationList([
       ...educationList,
@@ -61,12 +23,17 @@ export default function App() {
     ]);
   };
 
+  const handleDeleteEducation = (id) => {
+    setEducationList(educationList.filter((education) => education.id !== id));
+  };
+
   return (
     <>
       <FormContainer
         educationList={educationList}
-        handleNew={handleNew}
+        handleNewEducation={handleNewEducation}
         handleSaveEducation={handleSaveEducation}
+        handleDeleteEducation={handleDeleteEducation}
       />
       <Result educations={educationList} />
     </>

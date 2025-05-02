@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export default function EducationForm({ item, handleSaveEducation }) {
+export default function EducationForm({
+  item,
+  handleSaveEducation,
+  handleDeleteEducation,
+}) {
   const [formData, setFormData] = useState({
     schoolName: item.schoolName,
     studyTitle: item.studyTitle,
@@ -16,6 +20,12 @@ export default function EducationForm({ item, handleSaveEducation }) {
     e.preventDefault();
     handleSaveEducation(item.id, formData);
   };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    handleDeleteEducation(item.id);
+  };
+
   return (
     <form className='education' onSubmit={handleSubmit}>
       <label htmlFor='schoolName'>School Name</label>
@@ -46,6 +56,9 @@ export default function EducationForm({ item, handleSaveEducation }) {
       />
 
       <button className='save'>Save</button>
+      <button className='delete' onClick={handleDelete}>
+        Delete
+      </button>
     </form>
   );
 }
