@@ -9,6 +9,7 @@ export default function EducationForm({
     schoolName: item.schoolName,
     studyTitle: item.studyTitle,
     studyDate: item.studyDate,
+    location: item.location,
   });
 
   const handleChange = (e) => {
@@ -52,6 +53,15 @@ export default function EducationForm({
         name='studyDate'
         type='text'
         value={formData.studyDate}
+        onChange={handleChange}
+      />
+
+      <label htmlFor='studyDate'>Location</label>
+      <input
+        id='location'
+        name='location'
+        type='text'
+        value={formData.location}
         onChange={handleChange}
       />
 

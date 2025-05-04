@@ -16,6 +16,12 @@ export default function FormContainer({
 }) {
   return (
     <section className='form-container'>
+      <div className='template-disclaimer'>
+        <b>
+          The example demo is fictional and based on the character from the{" "}
+          <i>Breaking Bad</i>.
+        </b>
+      </div>
       <PersonalSection
         personalInfo={personalInfo}
         handleSavePersonal={handleSavePersonal}

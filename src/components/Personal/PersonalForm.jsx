@@ -43,7 +43,7 @@ export default function PersonalForm({ personalInfo, handleSavePersonal }) {
         id='phone'
         name='phone'
         type='tel'
-        value={personalInfo.phone}
+        value={formData.phone}
         onChange={handleChange}
       />
 
@@ -52,7 +52,7 @@ export default function PersonalForm({ personalInfo, handleSavePersonal }) {
         type='text'
         name='address'
         id='address'
-        value={personalInfo.address}
+        value={formData.address}
         onChange={handleChange}
       />
 

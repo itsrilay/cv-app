@@ -5,8 +5,8 @@ export default function WorkForm({ item, handleSaveWork, handleDeleteWork }) {
     company: item.company,
     position: item.position,
     responsibilities: item.responsibilities,
-    dateFrom: item.dateFrom,
-    dateTo: item.dateTo,
+    date: item.date,
+    companyAddress: item.companyAddress,
   });
 
   const handleChange = (e) => {
@@ -16,6 +16,7 @@ export default function WorkForm({ item, handleSaveWork, handleDeleteWork }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
     handleSaveWork(item.id, formData);
   };
 
@@ -55,21 +56,21 @@ export default function WorkForm({ item, handleSaveWork, handleDeleteWork }) {
         onChange={handleChange}
       />
 
-      <label htmlFor='dateFrom'>Date From</label>
+      <label htmlFor='date'>Date</label>
       <input
-        id='dateFrom'
-        name='dateFrom'
+        id='date'
+        name='date'
         type='text'
-        value={formData.dateFrom}
+        value={formData.date}
         onChange={handleChange}
       />
 
-      <label htmlFor='dateTo'>Date To</label>
+      <label htmlFor='companyAddress'>Company Address</label>
       <input
-        id='dateTo'
-        name='dateTo'
+        id='companyAddress'
+        name='companyAddress'
         type='text'
-        value={formData.dateTo}
+        value={formData.companyAddress}
         onChange={handleChange}
       />
 

@@ -7,9 +7,18 @@ function Result({ personal, educations, works }) {
       <div className='cv-header'>
         <h1>{personal.name}</h1>
         <div className='cv-contact'>
-          <p>{personal.email}</p>
-          <p>{personal.phone}</p>
-          <p>{personal.address}</p>
+          <p>
+            <span className='material-symbols-outlined'>mail</span>
+            {personal.email}
+          </p>
+          <p>
+            <span className='material-symbols-outlined'>call</span>
+            {personal.phone}
+          </p>
+          <p>
+            <span className='material-symbols-outlined'>pin_drop</span>
+            {personal.address}
+          </p>
         </div>
       </div>
       <div className='cv-body'>
