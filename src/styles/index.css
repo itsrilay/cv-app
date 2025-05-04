@@ -4,13 +4,25 @@
 }
 
 :root {
+  --bg-color-light: #dcf1ff;
+  --bg-color-dark: #272343;
+  --bg-color-section: #fffe;
+  --text-color-light: #2d334a;
+  --text-color-dark: #e4e6f2;
+  --save-color: hsl(163, 94%, 24%);
+  --save-color-dark: hsl(163, 94%, 14%);
+  --delete-color: hsl(0, 74%, 42%);
+  --delete-color-dark: hsl(0, 74%, 32%);
+  --new-color: hsl(0, 0%, 34%);
+  --new-color-dark: hsl(0, 0%, 24%);
+
   font-family: "Roboto", system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light;
-  color: #2d334a;
-  background-color: #dcf1ff;
+  color: var(--text-color-light);
+  background-color: var(--bg-color-light);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,7 +45,8 @@ h4,
 h5,
 h6,
 legend {
-  color: #272343;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color-light);
   font-weight: bold;
 }
 
@@ -53,7 +66,7 @@ legend {
   display: flex;
   flex-direction: column;
   font-size: 1em;
-  background-color: #fffe;
+  background-color: var(--bg-color-section);
   border-radius: 10px;
 }
 
@@ -75,7 +88,7 @@ legend {
   padding: 10px;
   width: 100%;
   height: 100%;
-  background-color: #fffe;
+  background-color: var(--bg-color-section);
   border: 0;
   cursor: pointer;
 }
@@ -90,12 +103,12 @@ legend {
 
 .expand-item {
   text-align: center;
-  background-color: #272343;
-  color: #c3c6df;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
 }
 
 .expand-item > h3 {
-  color: #c3c6df;
+  color: var(--text-color-dark);
 }
 
 .form-section-body {
@@ -113,8 +126,8 @@ legend {
   border-radius: 10px;
   margin-top: 10px;
   padding-top: 1em;
-  background-color: #272343;
-  color: #c3c6df;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
 }
 
 .hide {
@@ -132,9 +145,9 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  border: #272343 solid 2px;
+  border: var(--bg-color-dark) solid 1px;
   width: 700px;
-  height: 100%;
+  min-height: fit-content;
 }
 
 .education-info,
@@ -152,9 +165,9 @@ form {
 
 .cv-header {
   text-align: center;
-  color: #ffff;
+  color: var(--bg-color-section);
   align-self: center;
-  background-color: #272343;
+  background-color: var(--bg-color-dark);
   width: 100%;
 }
 
@@ -163,12 +176,12 @@ form {
 }
 
 .cv-header > h1 {
-  color: #ffff;
+  color: var(--bg-color-section);
   font-size: 54px;
 }
 
 .cv-section-header {
-  border-bottom: #272343 solid 1px;
+  border-bottom: var(--bg-color-dark) solid 1px;
   margin-bottom: 10px;
   padding-left: 20px;
 }
@@ -190,18 +203,6 @@ form {
   gap: 5px;
 }
 
-fieldset {
-  max-width: 100%;
-  padding: 1rem;
-  border-color: #272343;
-  display: flex;
-  flex-direction: column;
-}
-
-fieldset:not(:first-child) {
-  margin-top: 1.5em;
-}
-
 legend {
   font-size: 24px;
   padding: 0px 5px 0px 5px;
@@ -217,7 +218,7 @@ textarea {
   padding: 7px;
   max-width: 50%;
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 1px solid var(--new-color);
 }
 
 textarea {
@@ -242,22 +243,67 @@ textarea {
   height: auto;
 
   padding: 0.5em;
-  border: #047857 solid 1px;
+  border: var(--save-color) solid 1px;
   border-radius: 5px;
 
   text-align: center;
-  background-color: #047857;
-  color: #fffe;
+  background-color: var(--save-color);
+  color: var(--bg-color-section);
   font-weight: bold;
+}
+
+.save:hover {
+  background-color: var(--save-color-dark);
+  border-color: var(--save-color-dark);
 }
 
 .new {
   align-self: center;
-  border-color: #575757;
-  background-color: #575757;
+  border-color: var(--new-color);
+  background-color: var(--new-color);
+}
+
+.new:hover {
+  background-color: var(--new-color-dark);
+  border-color: var(--new-color-dark);
 }
 
 .delete {
-  border-color: #b91c1c;
-  background-color: #b91c1c;
+  border-color: var(--delete-color);
+  background-color: var(--delete-color);
+}
+
+.delete:hover {
+  border-color: var(--delete-color-dark);
+  background-color: var(--delete-color-dark);
+}
+
+@media (max-width: 800px) {
+  main {
+    flex-wrap: wrap;
+  }
+
+  input,
+  textarea {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    margin: 5px;
+  }
+
+  .cv-body {
+    padding: 5px;
+  }
+
+  .info-container > p {
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    max-width: 90%;
+  }
 }

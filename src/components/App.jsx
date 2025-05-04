@@ -6,6 +6,7 @@ let id = 0;
 
 export default function App() {
   const [personalInfo, setPersonalInfo] = useState({
+    id: id++,
     name: "Walter White",
     email: "walter.white@abqmail.com",
     phone: "(505) 555-0199",
@@ -13,12 +14,14 @@ export default function App() {
   });
   const [educationList, setEducationList] = useState([
     {
+      id: id++,
       schoolName: "California Institute of Technology (Caltech)",
       studyTitle: "Ph.D. in Chemistry",
       studyDate: "1985",
       location: "Pasadena, CA",
     },
     {
+      id: id++,
       schoolName: "University of New Mexico",
       studyTitle: "B.S. in Chemistry, Summa Cum Laude",
       studyDate: "1978",
@@ -28,6 +31,7 @@ export default function App() {
 
   const [workList, setWorkList] = useState([
     {
+      id: id++,
       company: "J. P. Wynne High School",
       position: "Chemistry Teacher",
       responsibilities:
@@ -38,6 +42,7 @@ export default function App() {
       companyAddress: "Albuquerque, NM",
     },
     {
+      id: id++,
       company: "Sandia Laboratories",
       position: "Research Chemist",
       responsibilities:
@@ -48,6 +53,7 @@ export default function App() {
       companyAddress: "Albuquerque, NM",
     },
     {
+      id: id++,
       company: "Gray Matter Technologies",
       position: "Research Scientist / Co-Founder",
       responsibilities:
