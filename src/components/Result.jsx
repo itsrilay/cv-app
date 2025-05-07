@@ -1,4 +1,4 @@
-import DisplayEducations from "./Education/displayEducations";
+import DisplayEducations from "./Education/DisplayEducations";
 import DisplayWorks from "./Work/DisplayWorks";
 
 function Result({ personal, educations, works }) {
