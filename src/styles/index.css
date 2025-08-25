@@ -113,29 +113,25 @@ legend {
 }
 
 .form-section-body {
-  max-height: 1000px;
-  overflow: hidden;
-  opacity: 1;
   padding-bottom: 10px;
-  transition: max-height 0.2s ease, opacity 0.2s ease;
 }
 
 .form-section-body,
 .item-body {
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
 }
 
 .item-body {
-  max-height: 1000px;
-  overflow: hidden;
-  opacity: 1;
   border-radius: 10px;
   margin-top: 10px;
   padding-top: 1em;
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
-  transition: max-height 0.2s ease, opacity 0.2s ease;
 }
 
 .hide {
