@@ -1,5 +1,5 @@
-import DisplayEducations from "./Education/DisplayEducations";
-import DisplayWorks from "./Work/DisplayWorks";
+import DisplayEducations from './Education/DisplayEducations';
+import DisplayWorks from './Work/DisplayWorks';
 
 function Result({ personal, educations, works }) {
   return (

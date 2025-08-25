@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function EducationForm({
   item,
@@ -66,8 +66,8 @@ export default function EducationForm({
       />
 
       <div className='buttons'>
-        <button className='save'>Save</button>
-        <button className='delete' onClick={handleDelete}>
+        <button className='btn save'>Save</button>
+        <button className='btn delete' onClick={handleDelete}>
           Delete
         </button>
       </div>

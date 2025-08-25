@@ -1,5 +1,5 @@
-import { useState } from "react";
-import DisplayItems from "../DisplayItems";
+import { useState } from 'react';
+import DisplayItems from '../DisplayItems';
 
 export default function EducationSection({
   educationList,
@@ -19,7 +19,7 @@ export default function EducationSection({
         <h2>Education</h2>
         <span className='material-symbols-outlined'>keyboard_arrow_down</span>
       </button>
-      <div className={hide ? "form-section-body hide" : "form-section-body"}>
+      <div className={hide ? 'form-section-body hide' : 'form-section-body'}>
         <>
           <DisplayItems
             list={educationList}
@@ -27,7 +27,7 @@ export default function EducationSection({
             handleSave={handleSaveEducation}
             handleDelete={handleDeleteEducation}
           />
-          <button className='new' onClick={handleNewEducation}>
+          <button className='btn new' onClick={handleNewEducation}>
             New
           </button>
         </>

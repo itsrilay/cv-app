@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function WorkForm({ item, handleSaveWork, handleDeleteWork }) {
   const [formData, setFormData] = useState({
@@ -75,8 +75,8 @@ export default function WorkForm({ item, handleSaveWork, handleDeleteWork }) {
       />
 
       <div className='buttons'>
-        <button className='save'>Save</button>
-        <button className='delete' onClick={handleDelete}>
+        <button className='btn save'>Save</button>
+        <button className='btn delete' onClick={handleDelete}>
           Delete
         </button>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function PersonalForm({ personalInfo, handleSavePersonal }) {
   const [formData, setFormData] = useState({
@@ -56,7 +56,7 @@ export default function PersonalForm({ personalInfo, handleSavePersonal }) {
         onChange={handleChange}
       />
 
-      <button className='save'>Save</button>
+      <button className='btn save'>Save</button>
     </form>
   );
 }

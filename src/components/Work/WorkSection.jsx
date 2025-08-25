@@ -1,5 +1,5 @@
-import { useState } from "react";
-import DisplayItems from "../DisplayItems";
+import { useState } from 'react';
+import DisplayItems from '../DisplayItems';
 
 export default function WorkSection({
   workList,
@@ -19,7 +19,7 @@ export default function WorkSection({
         <h2>Work</h2>
         <span className='material-symbols-outlined'>keyboard_arrow_down</span>
       </button>
-      <div className={hide ? "form-section-body hide" : "form-section-body"}>
+      <div className={hide ? 'form-section-body hide' : 'form-section-body'}>
         <>
           <DisplayItems
             list={workList}
@@ -27,7 +27,7 @@ export default function WorkSection({
             handleSave={handleSaveWork}
             handleDelete={handleDeleteWork}
           />
-          <button className='new' onClick={handleNewWork}>
+          <button className='btn new' onClick={handleNewWork}>
             New
           </button>
         </>

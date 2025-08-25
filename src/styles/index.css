@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Roboto', system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
 :root {
   --bg-color-light: #dcf1ff;
   --bg-color-dark: #272343;
@@ -15,10 +21,6 @@
   --delete-color-dark: hsl(0, 74%, 32%);
   --new-color: hsl(0, 0%, 34%);
   --new-color-dark: hsl(0, 0%, 24%);
-
-  font-family: "Roboto", system-ui, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light;
   color: var(--text-color-light);
@@ -45,7 +47,7 @@ h4,
 h5,
 h6,
 legend {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text-color-light);
   font-weight: bold;
 }
@@ -87,7 +89,6 @@ legend {
   border-radius: 10px;
   padding: 10px;
   width: 100%;
-  height: 100%;
   background-color: var(--bg-color-section);
   border: 0;
   cursor: pointer;
@@ -112,26 +113,34 @@ legend {
 }
 
 .form-section-body {
+  max-height: 1000px;
+  overflow: hidden;
+  opacity: 1;
   padding-bottom: 10px;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
 }
 
 .form-section-body,
 .item-body {
   display: flex;
   flex-direction: column;
-  height: fit-content;
 }
 
 .item-body {
+  max-height: 1000px;
+  overflow: hidden;
+  opacity: 1;
   border-radius: 10px;
   margin-top: 10px;
   padding-top: 1em;
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
+  transition: max-height 0.2s ease, opacity 0.2s ease;
 }
 
 .hide {
-  display: none;
+  max-height: 0;
+  opacity: 0;
 }
 
 form {
@@ -235,46 +244,53 @@ textarea {
   gap: 1em;
 }
 
-.save,
-.new,
-.delete {
+.btn {
   cursor: pointer;
+
   max-width: 60px;
   height: auto;
-
   padding: 0.5em;
-  border: var(--save-color) solid 1px;
+
+  border: 0;
   border-radius: 5px;
 
   text-align: center;
-  background-color: var(--save-color);
   color: var(--bg-color-section);
   font-weight: bold;
+
+  transition: background-color 0.2s ease, scale 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.save {
+  background-color: var(--save-color);
 }
 
 .save:hover {
   background-color: var(--save-color-dark);
-  border-color: var(--save-color-dark);
 }
 
 .new {
   align-self: center;
-  border-color: var(--new-color);
   background-color: var(--new-color);
 }
 
 .new:hover {
   background-color: var(--new-color-dark);
-  border-color: var(--new-color-dark);
 }
 
 .delete {
-  border-color: var(--delete-color);
   background-color: var(--delete-color);
 }
 
 .delete:hover {
-  border-color: var(--delete-color-dark);
   background-color: var(--delete-color-dark);
 }
 
