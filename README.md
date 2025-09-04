@@ -116,7 +116,7 @@ Make sure you're ready for the installation process.
 
 ## License
 
-This project is distributed under the MIT License - see [LICENSE](LICENSE) for more details.
+This project is distributed under the MIT License - see [LICENSE][license-url] for more details.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,7 +126,7 @@ This project is distributed under the MIT License - see [LICENSE](LICENSE) for m
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ruis2003
 [license-shield]: https://img.shields.io/github/license/itsrilay/cv-app.svg?style=for-the-badge
-[license-url]: https://github.com/itsrilay/cv-app/blob/master/LICENSE.txt
+[license-url]: https://github.com/itsrilay/cv-app/blob/master/LICENSE
 [product-screenshot]: src/assets/screenshot.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
