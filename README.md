@@ -96,7 +96,7 @@ Make sure you're ready for the installation process.
    If you're planning to make changes to the project but don't want to accidentally push to the original repository.
 
    ```sh
-   git remote set-url origin itsrilay/cv-app
+   git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
    ```
 
